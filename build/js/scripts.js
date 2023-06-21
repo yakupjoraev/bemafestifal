@@ -37,20 +37,62 @@ function burgerMenu() {
     }
   })
 }
-burgerMenu()
+burgerMenu();
 
 
-// Вызываем эту функцию, если нам нужно зафиксировать меню при скролле.
-function fixedNav() {
-  const nav = document.querySelector('nav')
+// Отображение/скрытие опций при клике на селект
+document.querySelector('.select-selected').addEventListener('click', function () {
+  var options = this.nextElementSibling;
+  options.classList.toggle('show');
+});
 
-  // тут указываем в пикселях, сколько нужно проскроллить что бы наше меню стало фиксированным
-  const breakpoint = 1
-  if (window.scrollY >= breakpoint) {
-    nav.classList.add('fixed__nav')
-  } else {
-    nav.classList.remove('fixed__nav')
-  }
+// Выбор опции и обновление текста в селекте
+var selectOptions = document.querySelectorAll('.select-option');
+for (var i = 0; i < selectOptions.length; i++) {
+  selectOptions[i].addEventListener('click', function () {
+    var selectedValue = this.textContent;
+    document.querySelector('.select-selected').textContent = selectedValue;
+    document.querySelector('.select-options').classList.remove('show');
+  });
 }
-window.addEventListener('scroll', fixedNav)
+
+// Установка первого элемента по умолчанию
+var firstOption = document.querySelector('.select-option');
+document.querySelector('.select-selected').textContent = firstOption.textContent;
+
+
+
+function winnersSlider() {
+  var swiper = new Swiper(".winners__slider", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".winners__arrow-next",
+      prevEl: ".winners__arrow-prev",
+    },
+    pagination: {
+      el: ".winners__slider-pagination",
+    },
+
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      // when window width is >= 480px
+      767: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      // when window width is >= 640px
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      }
+    }
+  });
+}
+
+winnersSlider();
 

@@ -8,6 +8,7 @@
   overflow: hidden;
   padding-top: 12rem;
   padding-bottom: 3rem;
+  max-height: 100vh;
 
   @media screen and (max-width: 640px) and (orientation: portrait) {
     .hero {
