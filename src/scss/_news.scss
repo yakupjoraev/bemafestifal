@@ -1,0 +1,114 @@
+.news {
+  position: relative;
+  padding: 120px 0;
+  background: linear-gradient(243.51deg, #F10283 -12.66%, #FF0048 22.01%, #840036 109.07%);
+  overflow: hidden;
+
+  @media (max-width: $breakpoint992) {
+    padding: 60px 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: calc(0% - 262px);
+    bottom: calc(0% - 340px);
+    width: 970.69px;
+    height: 951.94px;
+    background-image: url('../img/news-descr.svg');
+    background-repeat: no-repeat;
+  }
+
+  // .news__header
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 50px;
+    margin-bottom: 80px;
+
+    @media (max-width: $breakpoint992) {
+      margin-bottom: 30px;
+      column-gap: 20px;
+    }
+  }
+
+  // .news__title
+
+  &__title {
+    font-weight: 700;
+    font-size: 131px;
+    line-height: 157px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.4);
+
+    @media (max-width: $breakpoint1450) {
+      font-size: 36px;
+      line-height: 120%;
+    }
+
+    @media (max-width: $breakpoint992) {
+      font-size: 30px;
+      line-height: 38px;
+    }
+  }
+
+  // .news__all
+
+  &__all {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  & .winner-paganition .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5);
+
+    &.swiper-pagination-bullet-active {
+      background: #FFFFFF;
+    }
+  }
+
+  & .winner-slider .winners__slide-title,
+  & .winner-slider .winners__slide-descr {
+    color: #FFFFFF;
+  }
+
+  & .winner-slider .winners__slide-title {
+    height: 100px;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -ms-line-clamp: 3;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    display: -webkit-box;
+    display: box;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+  }
+
+  & .winner-slider .winners__slide {
+    display: grid;
+  }
+}
+
+.winners__slide-data {
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 23px;
+  color: #FFFFFF;
+}
+
+.winners__slide-border {
+  margin-bottom: 35px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}

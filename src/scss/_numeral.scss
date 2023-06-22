@@ -1,0 +1,153 @@
+.numeral {
+  position: relative;
+  padding: 120px 0 100px;
+  background-color: #2B2B2B;
+
+
+  @media (max-width: $breakpoint992) {
+    padding: 60px 0 40px;
+  }
+
+
+  z-index: 3;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 1368px;
+    height: 744px;
+    background: #2B2B2B url('../img/numeral-bg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-blend-mode: multiply;
+    z-index: -1;
+
+
+    @media (max-width: $breakpoint992) {
+      width: 700px;
+      height: 500px;
+      background-position: bottom;
+    }
+
+  }
+
+  // .numeral__inner
+
+  &__inner {}
+
+  // .numeral__title
+
+  &__title {
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 131px;
+    line-height: 157px;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 2px;
+
+    span {
+      font-weight: 300;
+    }
+
+
+    @media (max-width: $breakpoint992) {
+      font-size: 36px;
+      line-height: 45px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      margin-bottom: 30px;
+      font-size: 30px;
+      line-height: 38px;
+    }
+
+  }
+
+  // .numeral__lists
+
+  &__lists {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+
+    @media (max-width: $breakpoint768) {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 20px;
+    }
+  }
+
+  // .numeral__list
+
+  &__list {
+    @media (max-width: $breakpoint768) {
+      display: flex;
+      flex-direction: column;
+      row-gap: 25px;
+    }
+  }
+
+  // .numeral__item
+
+  &__item {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+
+
+    @media (max-width: $breakpoint992) {
+      flex-direction: column;
+      row-gap: 10px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: $breakpoint768) {
+      flex-direction: row;
+      column-gap: 5px;
+      align-items: center;
+    }
+
+  }
+
+  // .numeral__item-sum
+
+  &__item-sum {
+    min-width: 150px;
+    text-align: right;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 69px;
+    color: #F10283;
+    letter-spacing: 2px;
+
+
+    @media (max-width: $breakpoint992) {
+      text-align: left;
+    }
+
+    @media (max-width: $breakpoint768) {
+      min-width: 120px;
+      font-size: 35px;
+      line-height: 44px;
+    }
+
+  }
+
+  // .numeral__item-text
+
+  &__item-text {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: #FFFFFF;
+
+    @media (max-width: $breakpoint768) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}
+
+.container {}

@@ -104,5 +104,11 @@
     font-size: 20px;
     line-height: 25px;
     color: #FFFFFF;
+
+    // transition: background 0.2s linear;
+
+    &:hover {
+      background: #D2003B;
+    }
   }
 }
