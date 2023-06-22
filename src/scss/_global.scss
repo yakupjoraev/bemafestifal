@@ -25,6 +25,7 @@
 // Body Locked
 body {
   font-family: 'Geometria', sans-serif;
+  line-height: 120%;
 
   &.locked {
     overflow: hidden;
@@ -38,13 +39,13 @@ html {
 }
 
 .main__body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
 }
 
 .main {
-  flex-grow: 1;
+  // flex-grow: 1;
 }
 
 // Animations

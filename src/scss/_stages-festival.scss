@@ -1,0 +1,146 @@
+.stages-festival {
+  padding: 160px 0 0;
+
+  @media (max-width: $breakpoint992) {
+    padding-top: 60px;
+  }
+
+  // .stages-festival__inner
+
+  &__inner {}
+
+  // .stages-festival__title
+
+  &__title {
+    margin-bottom: 100px;
+    font-weight: 700;
+    font-size: 130.667px;
+    line-height: 120%;
+    letter-spacing: 2px;
+
+    background: linear-gradient(268.73deg, #F10283 4.64%, #FF0048 27.99%, #840036 101.96%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    @media (max-width: $breakpoint992) {
+      margin-bottom: 40px;
+      font-size: 36px;
+      line-height: 45px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      margin-bottom: 30px;
+      font-size: 30px;
+      line-height: 36px;
+    }
+  }
+
+  // .stages-festival__list
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 40px;
+    margin-bottom: 30px;
+
+    @media (max-width: $breakpoint1450) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+      row-gap: 40px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      grid-template-columns: repeat(1, 1fr);
+      margin-bottom: 70px;
+    }
+  }
+
+  // .stages-festival__item
+
+  &__item {
+    display: grid;
+    align-content: baseline;
+  }
+
+  // .stages-festival__item-num
+
+  &__item-num {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    background: linear-gradient(180deg, #F10283 0%, #FF0048 51.56%, #840036 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  // .stages-festival__item-data
+
+  &__item-data {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    color: #252525;
+  }
+
+  // .stages-festival__item-border
+
+  &__item-border {
+    margin-bottom: 30px;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(267.53deg, #F10283 -17.8%, #FF0048 44.22%, #840036 102.49%);
+  }
+
+  // .stages-festival__item-descr
+
+  &__item-descr {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    color: #A4A4A4;
+  }
+
+  // .stages-festival__info
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    min-height: 350px;
+    padding: 20px;
+    background: linear-gradient(243.51deg, #F10283 -12.66%, #FF0048 22.01%, #840036 109.07%);
+  }
+
+  // .stages-festival__info-data
+
+  &__info-data {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 69px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #F5F5F5;
+  }
+
+  // .stages-festival__info-descr
+
+  &__info-descr {
+    max-width: 840px;
+    margin: 0 auto;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    color: #111021
+  }
+}
