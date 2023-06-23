@@ -114,6 +114,23 @@ body,
 html {
   min-height: 100%;
   height: 100%;
+  scrollbar-color: #840036 #4F4F4F;
+  scrollbar-width: auto;
+}
+
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  width: 16px;
+}
+
+body::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track {
+  background: #4F4F4F;
+}
+
+body::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb {
+  background: var(--linear, linear-gradient(180deg, #F10283 0%, #FF0048 51.56%, #840036 100%));
 }
 
 @-webkit-keyframes fade {
