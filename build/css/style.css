@@ -1389,6 +1389,18 @@ html {
   padding: 200px 0 70px;
 }
 
+.news-detal::before {
+  content: "";
+  position: absolute;
+  bottom: calc(0% - 300px);
+  right: calc(0% - 400px);
+  background-image: url("../img/award-bg.svg");
+  background-repeat: no-repeat;
+  width: 1030.99px;
+  height: 1075.82px;
+  z-index: -2;
+}
+
 .news-detal__title {
   margin-bottom: 10px;
   font-weight: 700;
@@ -1539,6 +1551,178 @@ html {
   width: 100%;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.modal.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 1;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #ffffff;
+  margin: 10% auto;
+  padding: 70px;
+  width: 80%;
+  max-width: 1330px;
+  position: relative;
+  opacity: 0;
+  -webkit-transform: translateY(-50px);
+      -ms-transform: translateY(-50px);
+          transform: translateY(-50px);
+  -webkit-transition: opacity 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.modal.show .modal-content {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 156.8px;
+  letter-spacing: 2px;
+  color: #4F4F4F;
+  font-size: 100px;
+  line-height: 120px;
+}
+
+.price-list__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: rgba(241, 2, 131, 0.04);
+  color: #840036;
+  font-size: 31px;
+  text-transform: uppercase;
+}
+
+.price-list__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 20px;
+}
+
+.price-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+  padding: 10px;
+}
+
+.price-list__item-text {
+  color: #111021;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+.price-list__item-sum {
+  white-space: nowrap;
+  font-weight: 800;
+  color: #111021;
+  text-align: right;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.modal-content__descr {
+  margin-bottom: 30px;
+  color: #111021;
+  font-size: 30px;
+  line-height: 38px;
+}
+
+.modal-content__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 50px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: -o-linear-gradient(200.19deg, #F10283 -1.87%, #FF0048 52.63%, #840036 119.83%);
+  background: linear-gradient(249.81deg, #F10283 -1.87%, #FF0048 52.63%, #840036 119.83%);
+  outline: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: #FFFFFF;
+}
+
+.modal-content__link:hover {
+  background: #D2003B;
+}
+
 .footer {
   padding: 60px 0 70px;
   background: #000000;
@@ -1658,6 +1842,25 @@ html {
 
   .news-pictures__list {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .modal-content {
+    padding: 40px;
+  }
+
+  .modal-content h2 {
+    font-size: 60px;
+    line-height: 80px;
+  }
+
+  .price-list__item-text {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .price-list__item-sum {
+    font-size: 30px;
+    line-height: 38px;
   }
 }
 
@@ -1997,6 +2200,54 @@ html {
 
   .news-pictures__list {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modal-content {
+    padding: 30px;
+  }
+
+  .close-modal-btn {
+    top: 10px;
+    right: 10px;
+  }
+
+  .close-modal-btn svg {
+    width: 70%;
+    height: 70%;
+  }
+
+  .modal-content h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .price-list__header {
+    padding: 10px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .price-list__list {
+    row-gap: 10px;
+  }
+
+  .price-list__item-text {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .price-list__item-sum {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .modal-content__descr {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .modal-content__link {
+    padding: 20px;
   }
 }
 
@@ -2353,6 +2604,27 @@ html {
     line-height: 21px;
   }
 
+  .modal-content {
+    width: 96%;
+  }
+
+  .close-modal-btn svg {
+    width: 50%;
+    height: 50%;
+  }
+
+  .modal-content h2 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .modal-content__link {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
   .footer {
     padding: 60px 0;
   }
@@ -2391,5 +2663,30 @@ html {
 @media (max-width: 479.98px) {
   .container {
     max-width: none;
+  }
+
+  .modal-content h2 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .price-list__header {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .price-list__item-text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .price-list__item-sum {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .modal-content__descr {
+    font-size: 16px;
+    line-height: 20px;
   }
 }
