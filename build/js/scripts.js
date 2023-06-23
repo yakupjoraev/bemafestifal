@@ -39,27 +39,35 @@ function burgerMenu() {
 }
 burgerMenu();
 
+function simpleSelect() {
+  const container = document.querySelector('.custom-select');
 
-// Отображение/скрытие опций при клике на селект
-document.querySelector('.select-selected').addEventListener('click', function () {
-  var options = this.nextElementSibling;
-  options.classList.toggle('show');
-});
+  if (!container) {
+    return null
+  }
 
-// Выбор опции и обновление текста в селекте
-var selectOptions = document.querySelectorAll('.select-option');
-for (var i = 0; i < selectOptions.length; i++) {
-  selectOptions[i].addEventListener('click', function () {
-    var selectedValue = this.textContent;
-    document.querySelector('.select-selected').textContent = selectedValue;
-    document.querySelector('.select-options').classList.remove('show');
+  // Отображение/скрытие опций при клике на селект
+  document.querySelector('.select-selected').addEventListener('click', function () {
+    var options = this.nextElementSibling;
+    options.classList.toggle('show');
   });
+
+  // Выбор опции и обновление текста в селекте
+  var selectOptions = document.querySelectorAll('.select-option');
+  for (var i = 0; i < selectOptions.length; i++) {
+    selectOptions[i].addEventListener('click', function () {
+      var selectedValue = this.textContent;
+      document.querySelector('.select-selected').textContent = selectedValue;
+      document.querySelector('.select-options').classList.remove('show');
+    });
+  }
+
+  // Установка первого элемента по умолчанию
+  var firstOption = document.querySelector('.select-option');
+  document.querySelector('.select-selected').textContent = firstOption.textContent;
 }
 
-// Установка первого элемента по умолчанию
-var firstOption = document.querySelector('.select-option');
-document.querySelector('.select-selected').textContent = firstOption.textContent;
-
+simpleSelect();
 
 
 function winnersSlider() {
@@ -129,7 +137,6 @@ function newsSlider() {
 }
 
 newsSlider();
-
 
 // Аккордеон
 const accordionItems = document.querySelectorAll('[data-accordion-item]');
