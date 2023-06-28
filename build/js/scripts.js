@@ -1,6 +1,67 @@
 // Custom Scripts
 // Custom scripts
 
+// Обработчик события клика по пункту меню
+function smoothScroll(event) {
+  event.preventDefault(); // Предотвращаем переход по ссылке
+
+  const targetId = this.getAttribute("href"); // Получаем идентификатор целевой секции
+  const targetSection = document.querySelector(targetId); // Находим соответствующую секцию
+
+  // Выполняем плавную прокрутку к целевой секции
+  window.scrollTo({
+    top: targetSection.offsetTop,
+    behavior: "smooth",
+  });
+}
+
+// Добавляем обработчик клика ко всем пунктам меню
+const menuItems = document.querySelectorAll(".menu__item-link");
+menuItems.forEach(function (item) {
+  item.addEventListener("click", smoothScroll);
+});
+
+// Обработчик события прокрутки страницы
+function setActiveSection() {
+  const sections = document.querySelectorAll("section");
+  const menuItems = document.querySelectorAll(".menu__item-link");
+  let lastActiveMenuItem = null;
+  let offset;
+
+  if (window.innerWidth >= 1024) {
+    // Для ширины экрана больше или равной 1024 пикселей
+    offset = 80;
+  } else if (window.innerWidth >= 768) {
+    // Для ширины экрана больше или равной 768 пикселей
+    offset = 450;
+  } else {
+    // Для всех остальных случаев
+    offset = 100;
+  }
+
+  sections.forEach(function (section) {
+    const bounding = section.getBoundingClientRect();
+    const menuItem = document.querySelector(`a[href="#${section.id}"]`);
+
+    if (bounding.top <= offset && bounding.bottom > 0) {
+      lastActiveMenuItem = menuItem;
+    }
+  });
+
+  menuItems.forEach(function (menuItem) {
+    menuItem.classList.remove("active");
+  });
+
+  if (lastActiveMenuItem) {
+    lastActiveMenuItem.classList.add("active");
+  }
+}
+
+// Добавляем обработчик прокрутки страницы
+window.addEventListener("scroll", setActiveSection);
+
+
+
 // Мобильное меню бургер
 function burgerMenu() {
   const container = document.querySelector('.nav')
@@ -144,6 +205,24 @@ function newsSlider() {
 
 newsSlider();
 
+
+var selectOptions = document.querySelectorAll('.select-option');
+var winnersNews = document.querySelectorAll('.winners__news');
+
+selectOptions.forEach(function (option) {
+  option.addEventListener('click', function () {
+    var selectedIndex = Array.from(selectOptions).indexOf(option);
+
+    winnersNews.forEach(function (news, index) {
+      if (index === selectedIndex) {
+        news.style.display = 'block';
+      } else {
+        news.style.display = 'none';
+      }
+    });
+  });
+});
+
 // Аккордеон
 const accordionItems = document.querySelectorAll('[data-accordion-item]');
 let openAccordion = null; // переменная для хранения ссылки на открытый аккордеон
@@ -159,7 +238,8 @@ function toggleAccordion() {
     }
   }
 
-  this.classList.toggle('active'); // открыть или закрыть текущий аккордеон
+  this.closest('[data-accordion-item]').classList.toggle('active');
+  // открыть или закрыть текущий аккордеон
 
   const content = this.nextElementSibling;
   if (content) {
@@ -177,7 +257,7 @@ function toggleAccordion() {
 }
 
 
-accordionItems.forEach(item => item.addEventListener('click', toggleAccordion));
+accordionItems.forEach(item => item.querySelector('[data-accordion-item-title]').addEventListener('click', toggleAccordion));
 
 
 

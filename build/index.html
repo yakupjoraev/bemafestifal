@@ -12,7 +12,7 @@
 
 <body class="main__body">
   <!-- Header -->
-  <header class="header">
+  <header class="header" id="header">
   <!-- Navbar -->
   <nav class="nav">
     <div class="container">
@@ -24,13 +24,13 @@
         </div>
 
         <ul class="menu">
-          <li class="menu__item"><a href="#" class="menu__item-link active" data-scroll>Главная</a></li>
+          <li class="menu__item"><a href="#hero" class="menu__item-link active" data-scroll>Главная</a></li>
           <li class="menu__item"><a href="#" class="menu__item-link" data-scroll>Эксперты</a></li>
           <li class="menu__item"><a href="#" class="menu__item-link" data-scroll>Спикеры</a></li>
-          <li class="menu__item"><a href="#" class="menu__item-link" data-scroll>Победители</a></li>
+          <li class="menu__item"><a href="#winners" class="menu__item-link" data-scroll>Победители</a></li>
           <li class="menu__item"><a href="#" class="menu__item-link" data-scroll>Финалисты</a></li>
-          <li class="menu__item"><a href="#" class="menu__item-link" data-scroll>Партнеры</a></li>
-          <li class="menu__item"><a href="#" class="menu__item-link" data-scroll>Контакты</a></li>
+          <li class="menu__item"><a href="#partners" class="menu__item-link" data-scroll>Партнеры</a></li>
+          <li class="menu__item"><a href="#contacts" class="menu__item-link" data-scroll>Контакты</a></li>
         </ul>
 
         <div class="burger">
@@ -43,7 +43,7 @@
 
   <!-- Main Page -->
   <main class="main">
-    <section class="hero">
+    <section class="hero" id="hero">
   <div class="container">
     <div class="hero__inner">
       <video class="hero__video" loop autoplay muted>
@@ -58,12 +58,12 @@
           <span> best experience marketing awards!</span>
         </h1>
 
-        <a class="hero__registr" href="#">Регистрация</a>
+        <div class="hero__registr open-modal-btn" data-modal-id="modal4">Регистрация</div>
       </div>
     </div>
   </div>
 </section>
-    <section class="winners">
+    <section class="winners" id="winners">
   <div class="winners__inner">
     <div class="winners__selects">
       <h2 class="winners__selects-title">
@@ -73,15 +73,383 @@
       <div class="custom-select">
         <div class="select-selected">Выберите опцию</div>
         <div class="select-options">
-          <div class="select-option">БИЗНЕС-КОММУНИКАЦИИ</div>
-          <div class="select-option">Корпоративные коммуникации</div>
-          <div class="select-option">КЛИЕНТСКИЕ коммуникации</div>
-          <div class="select-option">специальные номинации</div>
+          <div class="select-option active" data-winners="1">БИЗНЕС-КОММУНИКАЦИИ</div>
+          <div class="select-option" data-winners="2">Корпоративные коммуникации</div>
+          <div class="select-option" data-winners="3">КЛИЕНТСКИЕ коммуникации</div>
+          <div class="select-option" data-winners="4">специальные номинации</div>
+        </div>
+      </div>
+    </div>
+    <!-- 
+    <div class="winners__news" style="display: block;" data-winners="1"></div>
+    <div class="winners__news" style="display: none;" data-winners="2"></div>
+    <div class="winners__news" style="display: none;" data-winners="3"></div>
+    <div class="winners__news" style="display: none;" data-winners="4"></div> -->
+
+    <div class="winners__news" data-winners="1">
+      <div class="winners__news-controls">
+        <div class="winners__arrow-prev">
+          <svg width="110" height="98" viewBox="0 0 110 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.7"
+              d="M54.52 97.4H36.52L0.280001 53.48V44.6L36.52 0.679996H54.52L15.16 49.16L54.52 97.4ZM109.96 97.4H91.48L55.24 53.48V44.6L91.48 0.679996H109.96L70.6 49.16L109.96 97.4Z"
+              fill="url(#paint0_linear_13_1178)" />
+            <defs>
+              <linearGradient id="paint0_linear_13_1178" x1="59.905" y1="-110" x2="59.905" y2="192"
+                gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F10283" />
+                <stop offset="0.515625" stop-color="#FF0048" />
+                <stop offset="1" stop-color="#840036" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+
+        </div>
+
+        <div class="winners__slider-pagination"></div>
+
+        <div class="winners__arrow-next">
+          <svg width="111" height="98" viewBox="0 0 111 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.7"
+              d="M56.24 0.679996H74.24L110.48 44.6V53.48L74.24 97.4H56.24L95.6 48.92L56.24 0.679996ZM0.8 0.679996H19.28L55.52 44.6V53.48L19.28 97.4H0.8L40.16 48.92L0.8 0.679996Z"
+              fill="url(#paint0_linear_13_1179)" />
+            <defs>
+              <linearGradient id="paint0_linear_13_1179" x1="60.79" y1="-110" x2="60.79" y2="192"
+                gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F10283" />
+                <stop offset="0.515625" stop-color="#FF0048" />
+                <stop offset="1" stop-color="#840036" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+
+        </div>
+
+      </div>
+
+      <div class="container">
+        <div class="winners__slider swiper mySwiper">
+          <div class="winners__slider-wrapper swiper-wrapper">
+            <a href="#" class="winners__slide swiper-slide">
+              <div class="winners__slide-img">
+                <img class="winners__slide-img" src="./img/winners/winners-1.jpg" alt="">
+              </div>
+
+              <h4 class="winners__slide-title">
+                SAP NOW «ЭПОХА ВОСХОЖДЕНИЯ. СЕЙЧАС»
+              </h4>
+
+              <p class="winners__slide-descr">
+                Лучшая клиентская активация
+              </p>
+            </a>
+
+            <a href="#" class="winners__slide swiper-slide">
+              <div class="winners__slide-img">
+                <img class="winners__slide-img" src="./img/winners/winners-1.jpg" alt="">
+              </div>
+
+              <h4 class="winners__slide-title">
+                Отборочный этап конкурса «Салют, мы ищем таланты!»
+              </h4>
+
+              <p class="winners__slide-descr">
+                Лучший мотивационный / командообразующий проект
+              </p>
+            </a>
+
+            <a href="#" class="winners__slide swiper-slide">
+              <div class="winners__slide-img">
+                <img class="winners__slide-img" src="./img/winners/winners-1.jpg" alt="">
+              </div>
+
+              <h4 class="winners__slide-title">
+                «ДОБРО НА РАЙОНЕ»
+              </h4>
+
+              <p class="winners__slide-descr">
+                Лучший обучающий / просветительский проект
+              </p>
+            </a>
+
+            <a href="#" class="winners__slide swiper-slide">
+              <div class="winners__slide-img">
+                <img class="winners__slide-img" src="./img/winners/winners-1.jpg" alt="">
+              </div>
+
+              <h4 class="winners__slide-title">
+                «ДОБРО НА РАЙОНЕ»
+              </h4>
+
+              <p class="winners__slide-descr">
+                Лучший обучающий / просветительский проект
+              </p>
+            </a>
+
+            <a href="#" class="winners__slide swiper-slide">
+              <div class="winners__slide-img">
+                <img class="winners__slide-img" src="./img/winners/winners-1.jpg" alt="">
+              </div>
+
+              <h4 class="winners__slide-title">
+                «ДОБРО НА РАЙОНЕ»
+              </h4>
+
+              <p class="winners__slide-descr">
+                Лучший обучающий / просветительский проект
+              </p>
+            </a>
+          </div>
+
+
         </div>
       </div>
     </div>
 
-    <div class="winners__news">
+    <div class="winners__news" style="display: none;" data-winners="2">
+      <div class="winners__news-controls">
+        <div class="winners__arrow-prev">
+          <svg width="110" height="98" viewBox="0 0 110 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.7"
+              d="M54.52 97.4H36.52L0.280001 53.48V44.6L36.52 0.679996H54.52L15.16 49.16L54.52 97.4ZM109.96 97.4H91.48L55.24 53.48V44.6L91.48 0.679996H109.96L70.6 49.16L109.96 97.4Z"
+              fill="url(#paint0_linear_13_1178)" />
+            <defs>
+              <linearGradient id="paint0_linear_13_1178" x1="59.905" y1="-110" x2="59.905" y2="192"
+                gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F10283" />
+                <stop offset="0.515625" stop-color="#FF0048" />
+                <stop offset="1" stop-color="#840036" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+
+        </div>
+
+        <div class="winners__slider-pagination"></div>
+
+        <div class="winners__arrow-next">
+          <svg width="111" height="98" viewBox="0 0 111 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.7"
+              d="M56.24 0.679996H74.24L110.48 44.6V53.48L74.24 97.4H56.24L95.6 48.92L56.24 0.679996ZM0.8 0.679996H19.28L55.52 44.6V53.48L19.28 97.4H0.8L40.16 48.92L0.8 0.679996Z"
+              fill="url(#paint0_linear_13_1179)" />
+            <defs>
+              <linearGradient id="paint0_linear_13_1179" x1="60.79" y1="-110" x2="60.79" y2="192"
+                gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F10283" />
+                <stop offset="0.515625" stop-color="#FF0048" />
+                <stop offset="1" stop-color="#840036" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+
+        </div>
+
+      </div>
+
+      <div class="container">
+        <div class="winners__slider swiper mySwiper">
+          <div class="winners__slider-wrapper swiper-wrapper">
+            <a href="#" class="winners__slide swiper-slide">
+              <div class="winners__slide-img">
+                <img class="winners__slide-img" src="./img/winners/winners-1.jpg" alt="">
+              </div>
+
+              <h4 class="winners__slide-title">
+                SAP NOW «ЭПОХА ВОСХОЖДЕНИЯ. СЕЙЧАС»
+              </h4>
+
+              <p class="winners__slide-descr">
+                Лучшая клиентская активация
+              </p>
+            </a>
+
+            <a href="#" class="winners__slide swiper-slide">
+              <div class="winners__slide-img">
+                <img class="winners__slide-img" src="./img/winners/winners-1.jpg" alt="">
+              </div>
+
+              <h4 class="winners__slide-title">
+                Отборочный этап конкурса «Салют, мы ищем таланты!»
+              </h4>
+
+              <p class="winners__slide-descr">
+                Лучший мотивационный / командообразующий проект
+              </p>
+            </a>
+
+            <a href="#" class="winners__slide swiper-slide">
+              <div class="winners__slide-img">
+                <img class="winners__slide-img" src="./img/winners/winners-1.jpg" alt="">
+              </div>
+
+              <h4 class="winners__slide-title">
+                «ДОБРО НА РАЙОНЕ»
+              </h4>
+
+              <p class="winners__slide-descr">
+                Лучший обучающий / просветительский проект
+              </p>
+            </a>
+
+            <a href="#" class="winners__slide swiper-slide">
+              <div class="winners__slide-img">
+                <img class="winners__slide-img" src="./img/winners/winners-1.jpg" alt="">
+              </div>
+
+              <h4 class="winners__slide-title">
+                «ДОБРО НА РАЙОНЕ»
+              </h4>
+
+              <p class="winners__slide-descr">
+                Лучший обучающий / просветительский проект
+              </p>
+            </a>
+
+            <a href="#" class="winners__slide swiper-slide">
+              <div class="winners__slide-img">
+                <img class="winners__slide-img" src="./img/winners/winners-1.jpg" alt="">
+              </div>
+
+              <h4 class="winners__slide-title">
+                «ДОБРО НА РАЙОНЕ»
+              </h4>
+
+              <p class="winners__slide-descr">
+                Лучший обучающий / просветительский проект
+              </p>
+            </a>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="winners__news" style="display: none;" data-winners="3">
+      <div class="winners__news-controls">
+        <div class="winners__arrow-prev">
+          <svg width="110" height="98" viewBox="0 0 110 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.7"
+              d="M54.52 97.4H36.52L0.280001 53.48V44.6L36.52 0.679996H54.52L15.16 49.16L54.52 97.4ZM109.96 97.4H91.48L55.24 53.48V44.6L91.48 0.679996H109.96L70.6 49.16L109.96 97.4Z"
+              fill="url(#paint0_linear_13_1178)" />
+            <defs>
+              <linearGradient id="paint0_linear_13_1178" x1="59.905" y1="-110" x2="59.905" y2="192"
+                gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F10283" />
+                <stop offset="0.515625" stop-color="#FF0048" />
+                <stop offset="1" stop-color="#840036" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+
+        </div>
+
+        <div class="winners__slider-pagination"></div>
+
+        <div class="winners__arrow-next">
+          <svg width="111" height="98" viewBox="0 0 111 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.7"
+              d="M56.24 0.679996H74.24L110.48 44.6V53.48L74.24 97.4H56.24L95.6 48.92L56.24 0.679996ZM0.8 0.679996H19.28L55.52 44.6V53.48L19.28 97.4H0.8L40.16 48.92L0.8 0.679996Z"
+              fill="url(#paint0_linear_13_1179)" />
+            <defs>
+              <linearGradient id="paint0_linear_13_1179" x1="60.79" y1="-110" x2="60.79" y2="192"
+                gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F10283" />
+                <stop offset="0.515625" stop-color="#FF0048" />
+                <stop offset="1" stop-color="#840036" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+
+        </div>
+
+      </div>
+
+      <div class="container">
+        <div class="winners__slider swiper mySwiper">
+          <div class="winners__slider-wrapper swiper-wrapper">
+            <a href="#" class="winners__slide swiper-slide">
+              <div class="winners__slide-img">
+                <img class="winners__slide-img" src="./img/winners/winners-1.jpg" alt="">
+              </div>
+
+              <h4 class="winners__slide-title">
+                SAP NOW «ЭПОХА ВОСХОЖДЕНИЯ. СЕЙЧАС»
+              </h4>
+
+              <p class="winners__slide-descr">
+                Лучшая клиентская активация
+              </p>
+            </a>
+
+            <a href="#" class="winners__slide swiper-slide">
+              <div class="winners__slide-img">
+                <img class="winners__slide-img" src="./img/winners/winners-1.jpg" alt="">
+              </div>
+
+              <h4 class="winners__slide-title">
+                Отборочный этап конкурса «Салют, мы ищем таланты!»
+              </h4>
+
+              <p class="winners__slide-descr">
+                Лучший мотивационный / командообразующий проект
+              </p>
+            </a>
+
+            <a href="#" class="winners__slide swiper-slide">
+              <div class="winners__slide-img">
+                <img class="winners__slide-img" src="./img/winners/winners-1.jpg" alt="">
+              </div>
+
+              <h4 class="winners__slide-title">
+                «ДОБРО НА РАЙОНЕ»
+              </h4>
+
+              <p class="winners__slide-descr">
+                Лучший обучающий / просветительский проект
+              </p>
+            </a>
+
+            <a href="#" class="winners__slide swiper-slide">
+              <div class="winners__slide-img">
+                <img class="winners__slide-img" src="./img/winners/winners-1.jpg" alt="">
+              </div>
+
+              <h4 class="winners__slide-title">
+                «ДОБРО НА РАЙОНЕ»
+              </h4>
+
+              <p class="winners__slide-descr">
+                Лучший обучающий / просветительский проект
+              </p>
+            </a>
+
+            <a href="#" class="winners__slide swiper-slide">
+              <div class="winners__slide-img">
+                <img class="winners__slide-img" src="./img/winners/winners-1.jpg" alt="">
+              </div>
+
+              <h4 class="winners__slide-title">
+                «ДОБРО НА РАЙОНЕ»
+              </h4>
+
+              <p class="winners__slide-descr">
+                Лучший обучающий / просветительский проект
+              </p>
+            </a>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="winners__news" style="display: none;" data-winners="4">
       <div class="winners__news-controls">
         <div class="winners__arrow-prev">
           <svg width="110" height="98" viewBox="0 0 110 98" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -593,7 +961,7 @@
         <div class="accordion">
           <div class="accordion__item" data-accordion-item>
             <div class="accordion__header">
-              <h4 class="accordion__header-title">
+              <h4 class="accordion__header-title" data-accordion-item-title>
                 БИЗНЕС-КОММУНИКАЦИИ
               </h4>
 
@@ -602,7 +970,7 @@
                 инструменты и способы решения задач, эффективность.
               </p>
 
-              <p class="accordion__header-price">Стоимость участия</p>
+              <p class="accordion__header-price open-modal-btn" data-modal-id="modal3">Стоимость участия</p>
             </div>
 
             <div class="accordion__content">
@@ -630,7 +998,7 @@
 
           <div class="accordion__item" data-accordion-item>
             <div class="accordion__header">
-              <h4 class="accordion__header-title">
+              <h4 class="accordion__header-title" data-accordion-item-title>
                 КОРПОРАТИВНЫЕ<br>
                 КОММУНИКАЦИИ
               </h4>
@@ -641,7 +1009,7 @@
                 эффективность.
               </p>
 
-              <p class="accordion__header-price">Стоимость участия</p>
+              <p class="accordion__header-price open-modal-btn" data-modal-id="modal3">Стоимость участия</p>
             </div>
 
             <div class="accordion__content">
@@ -669,7 +1037,7 @@
 
           <div class="accordion__item" data-accordion-item>
             <div class="accordion__header">
-              <h4 class="accordion__header-title">
+              <h4 class="accordion__header-title" data-accordion-item-title>
                 КЛИЕНТСКИЕ КОММУНИКАЦИИ
               </h4>
 
@@ -678,7 +1046,7 @@
                 инструменты и способы решения задач, эффективность.
               </p>
 
-              <p class="accordion__header-price">Стоимость участия</p>
+              <p class="accordion__header-price open-modal-btn" data-modal-id="modal3">Стоимость участия</p>
             </div>
 
             <div class="accordion__content">
@@ -706,7 +1074,7 @@
 
           <div class="accordion__item" data-accordion-item>
             <div class="accordion__header">
-              <h4 class="accordion__header-title">
+              <h4 class="accordion__header-title" data-accordion-item-title>
                 СПЕЦИАЛЬНЫЕ НОМИНАЦИИ
               </h4>
 
@@ -715,7 +1083,7 @@
                 оценки специальной номинации соответствует ее названию.
               </p>
 
-              <p class="accordion__header-price">Стоимость участия</p>
+              <p class="accordion__header-price open-modal-btn" data-modal-id="modal3">Стоимость участия</p>
             </div>
 
             <div class="accordion__content">
@@ -828,7 +1196,7 @@
     </div>
   </div>
 </section>
-    <section class="partners">
+    <section class="partners" id="partners">
   <div class="container">
     <h3 class="partners__title contacts__title">
       Партнёры
@@ -847,7 +1215,7 @@
     </div>
   </div>
 </section>
-    <section class="contacts">
+    <section class="contacts" id="contacts">
   <div class="container">
     <div class="contacts__inner">
       <h3 class="contacts__title">
@@ -872,6 +1240,152 @@
     </div>
   </div>
 </section>
+    <!-- Modal -->
+
+<div class="modal" id="modal1">
+  <div class="modal-content">
+
+    <h2>Стоимость участия</h2>
+
+    <div class="price-list">
+      <div class="price-list__header">
+        БИЗНЕС-КОММУНИКАЦИИ
+
+        <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30.8002 11L16.5002 26.4L2.2002 11" stroke="#840036" stroke-width="2.2" stroke-linecap="square" />
+        </svg>
+      </div>
+
+      <ul class="price-list__list">
+        <li class="price-list__item">
+          <p class="price-list__item-text">
+            Лучшая клиентская активация
+          </p>
+
+          <p class="price-list__item-sum">
+            18 000 ₽
+          </p>
+        </li>
+
+        <li class="price-list__item">
+          <p class="price-list__item-text">
+            Лучший мотивационный / командообразующий проект
+          </p>
+
+          <p class="price-list__item-sum">
+            28 600 ₽
+          </p>
+        </li>
+
+        <li class="price-list__item">
+          <p class="price-list__item-text">
+            Лучший обучающий / просветительский проект
+          </p>
+
+          <p class="price-list__item-sum">
+            38 650 ₽
+          </p>
+        </li>
+
+        <li class="price-list__item">
+          <p class="price-list__item-text">
+            Лучший коммуникационный проект
+          </p>
+
+          <p class="price-list__item-sum">
+            38 650 ₽
+          </p>
+        </li>
+
+        <li class="price-list__item">
+          <p class="price-list__item-text">
+            Свободное участие в рамках <br>«Недели креативных индустрий» по промокоду:
+          </p>
+
+          <p class="price-list__item-sum">
+            NEWBEMA
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <button class="close-modal-btn">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1.73535" width="65.4289" height="2.45358" transform="rotate(45 1.73535 0)" fill="#840036" />
+        <rect x="48" y="1.73535" width="65.4289" height="2.45358" transform="rotate(135 48 1.73535)" fill="#840036" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="modal" id="modal2">
+  <div class="modal-content">
+
+    <h2>Стоимость участия</h2>
+
+    <p class="modal-content__descr">
+      Стоимость участия формируется учредителями<br> и экспертным составом премии
+    </p>
+
+    <a class="modal-content__link" href="#">Подписаться на обновление информации</a>
+
+    <button class="close-modal-btn">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1.73535" width="65.4289" height="2.45358" transform="rotate(45 1.73535 0)" fill="#840036" />
+        <rect x="48" y="1.73535" width="65.4289" height="2.45358" transform="rotate(135 48 1.73535)" fill="#840036" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="modal" id="modal3">
+  <div class="modal-content modal-content--padding">
+
+    <h2>Стоимость участия</h2>
+
+    <div class="price-list">
+
+      <ul class="price-list__list">
+        <li class="price-list__item">
+          <p class="price-list__item-text">
+            Свободное участие в рамках <br>«Недели креативных индустрий» по промокоду:
+
+          </p>
+
+          <p class="price-list__item-sum">
+            NEWBEMA
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <button class="close-modal-btn">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1.73535" width="65.4289" height="2.45358" transform="rotate(45 1.73535 0)" fill="#840036" />
+        <rect x="48" y="1.73535" width="65.4289" height="2.45358" transform="rotate(135 48 1.73535)" fill="#840036" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="modal" id="modal4">
+  <div class="modal-content modal-content--padding">
+
+    <iframe data-checkin-form allow="payment" allowpaymentrequest
+      id="registration-form-54186604-2009-42b2-acc5-7cafcd3635e1"
+      class="registration-form-54186604-2009-42b2-acc5-7cafcd3635e1"
+      src="https://events.check-in.ru/embedded-register/54186604-2009-42b2-acc5-7cafcd3635e1" scrolling="no">
+      Ваш браузер не поддерживает плавающие фреймы!
+    </iframe>
+
+    <button class="close-modal-btn">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1.73535" width="65.4289" height="2.45358" transform="rotate(45 1.73535 0)" fill="#840036" />
+        <rect x="48" y="1.73535" width="65.4289" height="2.45358" transform="rotate(135 48 1.73535)" fill="#840036" />
+      </svg>
+    </button>
+  </div>
+</div>
   </main>
 
   <!-- Footer -->
@@ -948,8 +1462,20 @@
   </div>
 </footer>
 
-</body>
 
+
+  <style>
+    .registration-form-54186604-2009-42b2-acc5-7cafcd3635e1 {
+      background: transparent;
+      border: none;
+      width: 100%;
+      overflow: hidden;
+    }
+  </style>
+
+
+</body>
+<script src="https://events.check-in.ru/embedded.1.0.3.js" type="application/javascript"></script>
 <script src="./js/swiper-bundle.min.js"></script>
 <script src="./js/scripts.min.js"></script>
 

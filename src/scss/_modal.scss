@@ -258,3 +258,9 @@
     line-height: 20px;
   }
 }
+
+.modal-content--padding {
+  @media (max-width: $breakpoint480) {
+    padding: 30px 15px;
+  }
+}

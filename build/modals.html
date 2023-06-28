@@ -115,7 +115,7 @@
   <button class="open-modal-btn" data-modal-id="modal3">Open Modal 3</button>
 
   <div class="modal" id="modal3">
-    <div class="modal-content">
+    <div class="modal-content modal-content--padding">
 
       <h2>Стоимость участия</h2>
 
@@ -143,9 +143,38 @@
       </button>
     </div>
   </div>
+  <button class="open-modal-btn" data-modal-id="modal4">Open Modal 4</button>
+
+  <div class="modal" id="modal4">
+    <div class="modal-content modal-content--padding">
+
+      <iframe data-checkin-form allow="payment" allowpaymentrequest
+        id="registration-form-54186604-2009-42b2-acc5-7cafcd3635e1"
+        class="registration-form-54186604-2009-42b2-acc5-7cafcd3635e1"
+        src="https://events.check-in.ru/embedded-register/54186604-2009-42b2-acc5-7cafcd3635e1" scrolling="no">
+        Ваш браузер не поддерживает плавающие фреймы!
+      </iframe>
+
+      <button class="close-modal-btn">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1.73535" width="65.4289" height="2.45358" transform="rotate(45 1.73535 0)" fill="#840036" />
+          <rect x="48" y="1.73535" width="65.4289" height="2.45358" transform="rotate(135 48 1.73535)" fill="#840036" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <style>
+    .registration-form-54186604-2009-42b2-acc5-7cafcd3635e1 {
+      background: transparent;
+      border: none;
+      width: 100%;
+      overflow: hidden;
+    }
+  </style>
 
 </body>
-
+<script src="https://events.check-in.ru/embedded.1.0.3.js" type="application/javascript"></script>
 <script src="./js/swiper-bundle.min.js"></script>
 <script src="./js/scripts.min.js"></script>
 

@@ -309,6 +309,7 @@ html::-webkit-scrollbar-thumb {
   font-size: 20px;
   line-height: 25px;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 .hero__registr:hover {
@@ -563,6 +564,8 @@ html::-webkit-scrollbar-thumb {
   max-width: 1680px;
   margin: 0 auto;
   padding: 0 160px;
+  -webkit-animation: fade 1s linear;
+          animation: fade 1s linear;
 }
 
 .winners__arrow-prev {
@@ -756,6 +759,20 @@ html::-webkit-scrollbar-thumb {
   bottom: 5px;
 }
 
+.accordion__item.active .accordion__header-title {
+  background: -o-linear-gradient(182.85deg, #FFFFFF -5.6%, #FFFFFF 64.97%, #FFFFFF 131.25%);
+  background: linear-gradient(267.15deg, #FFFFFF -5.6%, #FFFFFF 64.97%, #FFFFFF 131.25%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.accordion__item.active .accordion__content-block {
+  padding: 30px 0;
+  max-height: 200px;
+}
+
 .accordion__item.active .accordion__header::after {
   opacity: 0;
 }
@@ -767,9 +784,9 @@ html::-webkit-scrollbar-thumb {
 .accordion__header {
   position: relative;
   cursor: pointer;
-  -webkit-transition: background-color 0.2s ease;
-  -o-transition: background-color 0.2s ease;
-  transition: background-color 0.2s ease;
+  -webkit-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
 }
 
 .accordion__header::before {
@@ -792,21 +809,21 @@ html::-webkit-scrollbar-thumb {
   height: 24px;
   border-radius: 14px;
   background-color: var(--primary);
-  -webkit-transition: opacity 0.2s linear;
-  -o-transition: opacity 0.2s linear;
-  transition: opacity 0.2s linear;
+  -webkit-transition: opacity 0.5s linear;
+  -o-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
 }
 
 .accordion__content {
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: max-height 0.2s ease, padding 0.2s ease;
-  -o-transition: max-height 0.2s ease, padding 0.2s ease;
-  transition: max-height 0.2s ease, padding 0.2s ease;
+  -webkit-transition: max-height 0.5s linear, padding 0.5s linear;
+  -o-transition: max-height 0.5s linear, padding 0.5s linear;
+  transition: max-height 0.5s linear, padding 0.5s linear;
 }
 
 .accordion__item.active .accordion__content {
-  max-height: 1000px;
+  max-height: 100%;
 }
 
 .nominations {
@@ -892,6 +909,9 @@ html::-webkit-scrollbar-thumb {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .accordion__header-descr {
@@ -925,8 +945,12 @@ html::-webkit-scrollbar-thumb {
 }
 
 .accordion__content-block {
-  padding: 30px 0;
+  padding: 0;
+  max-height: 0;
   border-top: 1px solid rgba(217, 217, 217, 0.2);
+  -webkit-transition: max-height 0.5s linear, padding 0.5s linear;
+  -o-transition: max-height 0.5s linear, padding 0.5s linear;
+  transition: max-height 0.5s linear, padding 0.5s linear;
 }
 
 .accordion__content-title {
@@ -2135,7 +2159,7 @@ html::-webkit-scrollbar-thumb {
   }
 
   .partners {
-    padding: 60px 0;
+    padding: 120px 0;
   }
 
   .partners__title {
@@ -2705,5 +2729,9 @@ html::-webkit-scrollbar-thumb {
   .modal-content__descr {
     font-size: 16px;
     line-height: 20px;
+  }
+
+  .modal-content--padding {
+    padding: 30px 15px;
   }
 }

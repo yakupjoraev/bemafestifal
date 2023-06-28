@@ -132,6 +132,8 @@
     margin: 0 auto;
     padding: 0 160px;
 
+    animation: fade 1s linear;
+
     @media (max-width: $breakpoint1450) {
       padding: 0 80px;
     }
