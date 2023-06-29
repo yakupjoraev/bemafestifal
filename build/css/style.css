@@ -764,23 +764,15 @@ html::-webkit-scrollbar-thumb {
   border-bottom: 3px solid #d9d9d9;
 }
 
-.accordion__item::before {
-  content: "";
+.accordion__item.active .accordion__header-tringle {
   position: absolute;
-  bottom: 0;
-  left: 5px;
-  background-image: url("../img/accardion-tringle.svg");
-  background-repeat: no-repeat;
-  width: 20px;
-  height: 12px;
-  background-size: contain;
+  bottom: 5px;
 }
 
-.accordion__item.active::before {
+.accordion__item.active .accordion__header-tringle img {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
-  bottom: 5px;
 }
 
 .accordion__item.active .accordion__header-title {
@@ -806,36 +798,10 @@ html::-webkit-scrollbar-thumb {
 }
 
 .accordion__header {
-  position: relative;
   cursor: pointer;
   -webkit-transition: background-color 0.5s ease;
   -o-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
-}
-
-.accordion__header::before {
-  content: "";
-  position: absolute;
-  top: 58px;
-  right: 34px;
-  width: 24px;
-  height: 4px;
-  border-radius: 14px;
-  background-color: var(--primary);
-}
-
-.accordion__header::after {
-  content: "";
-  position: absolute;
-  top: 48px;
-  right: 44px;
-  width: 4px;
-  height: 24px;
-  border-radius: 14px;
-  background-color: var(--primary);
-  -webkit-transition: opacity 0.5s linear;
-  -o-transition: opacity 0.5s linear;
-  transition: opacity 0.5s linear;
 }
 
 .accordion__content {
@@ -947,6 +913,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 .accordion__header-price {
+  margin-left: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -990,6 +957,33 @@ html::-webkit-scrollbar-thumb {
   font-size: 24px;
   line-height: 30px;
   color: #A4A4A4;
+}
+
+.accordion__header__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+}
+
+.accordion__header-tringle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 .news {

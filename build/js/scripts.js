@@ -299,6 +299,7 @@ function toggleAccordion() {
 
 
 accordionItems.forEach(item => item.querySelector('[data-accordion-item-title]').addEventListener('click', toggleAccordion));
+accordionItems.forEach(item => item.querySelector('.accordion__header-tringle').addEventListener('click', toggleAccordion));
 
 
 

@@ -13,22 +13,16 @@
   overflow: hidden;
   border-bottom: 3px solid rgba(217, 217, 217, 1);
 
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 5px;
-    background-image: url('../img/accardion-tringle.svg');
-    background-repeat: no-repeat;
-    width: 20px;
-    height: 12px;
-    background-size: contain;
-  }
-
   &.active {
-    &::before {
-      transform: rotate(180deg);
+
+    & .accordion__header-tringle {
+      position: absolute;
       bottom: 5px;
+    }
+
+    & .accordion__header-tringle img {
+      transform: rotate(180deg);
+
     }
 
 
@@ -60,33 +54,10 @@
 }
 
 .accordion__header {
-  position: relative;
 
   cursor: pointer;
   transition: background-color 0.5s ease;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 58px;
-    right: 34px;
-    width: 24px;
-    height: 4px;
-    border-radius: 14px;
-    background-color: var(--primary);
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 48px;
-    right: 44px;
-    width: 4px;
-    height: 24px;
-    border-radius: 14px;
-    background-color: var(--primary);
-    transition: opacity 0.5s linear;
-  }
 
   @media (max-width: $breakpoint992) {
     padding: 24px;
@@ -321,6 +292,7 @@
   }
 
   &__header-price {
+    margin-left: auto;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -383,4 +355,17 @@
     }
 
   }
+}
+
+.accordion__header__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+
+.accordion__header-tringle {
+  display: flex;
+  align-items: flex-end;
+  transition: all 0.5s linear;
 }
