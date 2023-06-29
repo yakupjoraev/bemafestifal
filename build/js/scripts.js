@@ -138,38 +138,77 @@ simpleSelect();
 
 
 function winnersSlider() {
-  var swiper = new Swiper(".winners__slider", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    navigation: {
-      nextEl: ".winners__arrow-next",
-      prevEl: ".winners__arrow-prev",
-    },
-    pagination: {
-      el: ".winners__slider-pagination",
-    },
+  var winnerSliders = document.querySelectorAll(".winners__news");
 
-    breakpoints: {
-      // when window width is >= 320px
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20
+  winnerSliders.forEach(winnerSlider => {
+    const slider = winnerSlider.querySelector('.winners__slider');
+    const slideNumber = winnerSlider.getAttribute('data-winners');
+
+    var swiper = new Swiper(slider, {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: `.winners__arrow-next${slideNumber}`,
+        prevEl: `.winners__arrow-prev${slideNumber}`
       },
-      // when window width is >= 480px
-      767: {
-        slidesPerView: 2,
-        spaceBetween: 20
+      pagination: {
+        el: `.winners__slider-pagination${slideNumber}`
       },
-      // when window width is >= 640px
-      992: {
-        slidesPerView: 3,
-        spaceBetween: 30,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20
+        },
+        767: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        }
       }
-    }
+    });
   });
 }
 
 winnersSlider();
+
+
+// function winnersSlider() {
+//   var swiper = new Swiper(".winners__slider", {
+//     slidesPerView: 1,
+//     spaceBetween: 20,
+//     navigation: {
+//       nextEl: ".winners__arrow-next",
+//       prevEl: ".winners__arrow-prev",
+//     },
+//     pagination: {
+//       el: ".winners__slider-pagination",
+//     },
+
+//     breakpoints: {
+//       // when window width is >= 320px
+//       320: {
+//         slidesPerView: 1,
+//         spaceBetween: 20
+//       },
+//       // when window width is >= 480px
+//       767: {
+//         slidesPerView: 2,
+//         spaceBetween: 20
+//       },
+//       // when window width is >= 640px
+//       992: {
+//         slidesPerView: 3,
+//         spaceBetween: 30,
+//       }
+//     }
+//   });
+// }
+
+// winnersSlider();
+
 
 function newsSlider() {
   var swiper = new Swiper(".winner-slider", {
@@ -215,9 +254,11 @@ selectOptions.forEach(function (option) {
 
     winnersNews.forEach(function (news, index) {
       if (index === selectedIndex) {
-        news.style.display = 'block';
+        // news.style.display = 'flex';
+        news.classList.add('active');
       } else {
-        news.style.display = 'none';
+        // news.style.display = 'none';
+        news.classList.remove('active');
       }
     });
   });
