@@ -1085,6 +1085,13 @@ html::-webkit-scrollbar-thumb {
   background-color: #fff;
 }
 
+.winners__news-2 {
+  position: relative;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 160px;
+}
+
 .contacts {
   padding: 160px 0 200px;
   background-color: #fff;
@@ -1897,6 +1904,10 @@ html::-webkit-scrollbar-thumb {
     line-height: 120%;
   }
 
+  .winners__news-2 {
+    padding: 0 80px;
+  }
+
   .stages-festival__list {
     grid-template-columns: repeat(2, 1fr);
     -webkit-column-gap: 30px;
@@ -2166,6 +2177,18 @@ html::-webkit-scrollbar-thumb {
   .news__title {
     font-size: 30px;
     line-height: 38px;
+  }
+
+  .winners__news-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    row-gap: 40px;
+    padding: 0 15px;
   }
 
   .contacts {
