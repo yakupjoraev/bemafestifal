@@ -1453,6 +1453,7 @@ html::-webkit-scrollbar-thumb {
 .news-detal {
   position: relative;
   padding: 200px 0 70px;
+  overflow: hidden;
 }
 
 .news-detal::before {

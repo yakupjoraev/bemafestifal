@@ -1,6 +1,7 @@
 .news-detal {
   position: relative;
   padding: 200px 0 70px;
+  overflow: hidden;
 
   &::before {
     content: '';
